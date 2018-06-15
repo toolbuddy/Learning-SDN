@@ -55,6 +55,20 @@ package: sean
 ```
 此時，你的檔案目錄下，就會多一個以`artifactId`命名的資料夾，那就是建立好的專案。
 
+
+### 使用 `onos-create-app` 指令創建板模
+
+於 ONOS 本身提供了 onos-create-app 的腳本，功能與上述使用 mvn 指令建立大同小異
+
+```
+onon-create-app
+```
+
+> 該腳本位置會在 `$ONOS_ROOT/tools/dev/bin/onos-create-app` 這個地方 (ONOS `v1.14.0`)，可以進去看看他是怎麼包裝的
+
+運行後，便會有一個專案資料夾出現!
+
+
 ### 調整`pom.xml`檔
 
 雖然專案已經建好了，但專案的敘述及套件的版本都需要稍微修改一下。首開，開啟 `pom.xml` 並修改專案敘述及 ONOS 本版：
@@ -78,6 +92,9 @@ package: sean
 ```
 
 > 使用的 ONOS API 版本，會隨著版本的設定而更改哦！ 
+> 
+> 如果沒有把原本 template 中 `pom.xml` 的註解給 uncomment 掉，則會運行 `mvn clean install` 後，就不會有 .oar 檔出現
+
 
 ### 讓 App 說：Hello!
 
